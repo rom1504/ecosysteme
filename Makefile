@@ -11,8 +11,11 @@ all: $(EXECUTABLE)
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
 
-bin/%.o : %.cpp
+bin/%.o : %.cpp creer
 	$(CC) -c $(CFLAGS) $< -o $@
+
+creer:
+	mkdir bin
 
 clean:
 	rm -f bin/*
